@@ -14,11 +14,18 @@ html, body{
 
 .header_container {
   display: flex;
-  justify-content: center;
   align-items: center;
   padding-top: 150px;
   padding-bottom: 50px;
-  gap: 100px;
+  width: 100%;
+}
+
+.header_column {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header_container h1 a{
@@ -35,12 +42,7 @@ html, body{
   width: 900px;
   padding-top: 15px;
   padding-bottom: 15px;
-  display: flex;
-  flex-direction: row;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
   border-top: 5px solid rgb(211, 211, 211, 0.5);
   border-bottom: 5px double black;
   font-size: 15px;
