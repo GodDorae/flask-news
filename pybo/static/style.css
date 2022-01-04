@@ -1,3 +1,11 @@
+@media screen and (max-width: 1000px) {
+  .rec {
+    display: none;
+  }
+}
+
+/* The contents under this line is for computer */
+
 html, body{
   width: 100%;
   height: 100%;
