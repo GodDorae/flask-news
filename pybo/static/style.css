@@ -79,11 +79,16 @@ footer {
   font-size: 25px;
 }
 
-#subject {
-  width: 500px;
+.writing_area {
+  width: 925px;
 }
 
-#content {
-  width: 1000px;
-  height: 500px;
+.info_box {
+  border: none;
+  background-color: white;
+  color: black;
+}
+
+.small_button {
+  border: 1px solid black;
 }
