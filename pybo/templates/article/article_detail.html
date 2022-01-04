@@ -1,5 +1,7 @@
 <head>
-	    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">	
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" media="all" />
 </head>
 {% extends 'base.html' %}
 {% block content %}
@@ -21,17 +23,17 @@
         </div>
         <div class="col-11"> <!-- 질문영역 -->
             <!-- 기존내용 -->
-            <div class="card">
+            <div class="card writing_area">
                 <div class="card-body">
                     <div class="card-text">{{ article.content|markdown }}</div>
                     <div class="d-flex justify-content-end">
                         {% if article.modify_date %}
-                        <div class="badge badge-light p-2 text-left mx-3">
+                        <div class="badge badge-light p-2 text-left mx-3 info_box">
                             <div class="mb-2">modified at</div>
                             <div>{{ article.modify_date|datetime }}</div>
                         </div>
                         {% endif %}
-                        <div class="badge badge-light p-2 text-left">
+                        <div class="badge badge-light p-2 text-left info_box">
                             <div class="mb-2">{{ article.user.username }}</div>
                             <div>{{ article.create_date|datetime }}</div>
                         </div>
@@ -39,8 +41,8 @@
                     {% if g.user == article.user %}
                     <div class="my-3">
                         <a href="{{ url_for('article.modify', article_id=article.id) }}"
-                        class="btn btn-sm btn-outline-secondary">수정</a>
-                        <a href="#" class="delete btn btn-sm btn-outline-secondary"
+                        class="btn btn-sm btn-outline-secondary small_button">수정</a>
+                        <a href="#" class="delete btn btn-sm btn-outline-secondary small_button"
                         data-uri="{{ url_for('article.delete', article_id=article.id) }}">삭제</a>
                     </div>
                     {% endif %}
@@ -64,12 +66,12 @@
                     <div class="card-text">{{ answer.content|markdown }}</div>
                     <div class="d-flex justify-content-end">
                         {% if answer.modify_date %}
-                        <div class="badge badge-light p-2 text-left mx-3">
+                        <div class="badge badge-light p-2 text-left mx-3 info_box">
                             <div class="mb-2">modified at</div>
                             <div>{{ answer.modify_date|datetime }}</div>
                         </div>
                         {% endif %}
-                        <div class="badge badge-light p-2 text-left">
+                        <div class="badge badge-light p-2 text-left info_box">
                             <div class="mb-2">{{ answer.user.username }}</div>
                             <div>{{ answer.create_date|datetime }}</div>
                         </div>
@@ -77,8 +79,8 @@
                     {% if g.user == answer.user %}
                     <div class="my-3">
                         <a href="{{ url_for('answer.modify', answer_id=answer.id) }}"
-                            class="btn btn-sm btn-outline-secondary">수정</a>
-                        <a href="#" class="delete btn btn-sm btn-outline-secondary "
+                            class="btn btn-sm btn-outline-secondary small_button">수정</a>
+                        <a href="#" class="delete btn btn-sm btn-outline-secondary small_button"
                         data-uri="{{ url_for('answer.delete', answer_id=answer.id) }}">삭제</a>
                     </div>
                     {% endif %}
@@ -101,6 +103,7 @@
         </div>
         <input type="submit" value="답변등록" class="btn btn-primary">
     </form>
+    <a href="{{ url_for('article._list') }}" class="btn btn-primary">칼럼 목록으로 돌아가기</a>
 </div>
 <script>
     $(document).ready(function() {
