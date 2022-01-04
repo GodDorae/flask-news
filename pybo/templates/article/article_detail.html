@@ -16,14 +16,14 @@
     </div>
     {% endfor %}
     <div class="row my-3">
-        <div class="col-1"> <!-- 추천영역 -->
+        <div class="col-1 rec"> <!-- 추천영역 -->
             <div class="bg-light text-center p-3 border font-weight-bolder mb-1">{{ article.voter|length }}</div>
             <a href="#" data-uri="{{ url_for('vote.article', article_id=article.id) }}"
                class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
         </div>
-        <div class="col-11"> <!-- 질문영역 -->
+        <div class="col-11 writing_area"> <!-- 글영역 -->
             <!-- 기존내용 -->
-            <div class="card writing_area">
+            <div class="card">
                 <div class="card-body">
                     <div class="card-text">{{ article.content|markdown }}</div>
                     <div class="d-flex justify-content-end">
