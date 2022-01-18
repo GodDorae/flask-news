@@ -21,11 +21,11 @@
             <a href="#" data-uri="{{ url_for('vote.article', article_id=article.id) }}"
                class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
         </div>
-        <div class="col-11 writing_area"> <!-- 글영역 -->
+        <div class="col-11 borderline"> <!-- 글영역 -->
             <!-- 기존내용 -->
             <div class="card">
                 <div class="card-body">
-                    <div class="card-text">{{ article.content|markdown }}</div>
+                    <div class="card-text writing_area">{{ article.content|markdown }}</div>
                     <div class="d-flex justify-content-end">
                         {% if article.modify_date %}
                         <div class="badge badge-light p-2 text-left mx-3 info_box">
@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>    
-    <h5 class="border-bottom my-3 py-2">{{ article.answer_set|length }}개의 답변이 있습니다.</h5>
+    <h5 class="border-bottom my-3 py-2 padding_left">{{ article.answer_set|length }}개의 답변이 있습니다.</h5>
     {% for answer in article.answer_set %}
     <a name="answer_{{ answer.id }}"></a>
     <div class="row my-3">
@@ -61,7 +61,7 @@
         </div>
         <div class="col-11">  <!-- 답변영역 -->
             <!-- 기존내용 -->
-            <div class="card">
+            <div class="card borderline">
                 <div class="card-body">
                     <div class="card-text">{{ answer.content|markdown }}</div>
                     <div class="d-flex justify-content-end">
@@ -98,12 +98,12 @@
         </div>
         {% endfor %}
         <!-- 오류표시 End -->
-        <div class="form-group">
+        <div class="form-group answer_area padding_left">
             <textarea {% if not g.user %}disabled{% endif %}name="content" id="summernote" class="form-control main_content" rows="10"></textarea>
         </div>
-        <input type="submit" value="답변등록" class="btn btn-primary">
+        <input type="submit" value="답변등록" class="btn btn-primary margin_left">
     </form>
-    <a href="{{ url_for('article._list') }}" class="btn btn-primary">칼럼 목록으로 돌아가기</a>
+    <a href="{{ url_for('article._list') }}" class="btn btn-primary margin_left">칼럼 목록으로 돌아가기</a>
 </div>
 <script>
     $(document).ready(function() {
