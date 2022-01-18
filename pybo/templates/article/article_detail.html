@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>    
-    <h5 class="border-bottom my-3 py-2 padding_left">{{ article.answer_set|length }}개의 답변이 있습니다.</h5>
+    <h5 class="my-3 py-2 padding_left">{{ article.answer_set|length }}개의 답변이 있습니다.</h5>
     {% for answer in article.answer_set %}
     <a name="answer_{{ answer.id }}"></a>
     <div class="row my-3">
