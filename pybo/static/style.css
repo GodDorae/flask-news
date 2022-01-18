@@ -87,8 +87,25 @@ footer {
   font-size: 25px;
 }
 
+.borderline {
+  width: 900px;
+  margin-left: 10px;
+}
+
 .writing_area {
-  width: 925px;
+  padding: 15px;
+}
+
+.answer_area {
+  width: 1005px;
+}
+
+.padding_left {
+  padding-left: 105px;
+}
+
+.margin_left {
+  margin-left: 105px;
 }
 
 .info_box {
