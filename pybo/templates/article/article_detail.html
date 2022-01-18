@@ -21,9 +21,9 @@
             <a href="#" data-uri="{{ url_for('vote.article', article_id=article.id) }}"
                class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
         </div>
-        <div class="col-11 borderline"> <!-- 글영역 -->
+        <div class="col-11"> <!-- 글영역 -->
             <!-- 기존내용 -->
-            <div class="card">
+            <div class="card borderline">
                 <div class="card-body">
                     <div class="card-text writing_area">{{ article.content|markdown }}</div>
                     <div class="d-flex justify-content-end">
