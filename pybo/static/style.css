@@ -1,9 +1,3 @@
-@media screen and (max-width: 1000px) {
-  .rec {
-    display: none;
-  }
-}
-
 /* The contents under this line is for computer */
 
 html, body{
@@ -116,4 +110,17 @@ footer {
 
 .small_button {
   border: 1px solid black;
+}
+
+@media (max-width: 1185px) {
+
+  .rec {
+    display: none;
+  }
+  .borderline {
+    width: 660px;
+  }
+  .padding_left {
+    padding-left: 10px;
+  }
 }
