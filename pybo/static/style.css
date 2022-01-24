@@ -123,4 +123,10 @@ footer {
   .padding_left {
     padding-left: 10px;
   }
+  .answer_area {
+    width: 670px;
+  }
+  .margin_left {
+    margin-left: 10px;
+  }
 }
