@@ -54,7 +54,7 @@
     {% for answer in article.answer_set %}
     <a name="answer_{{ answer.id }}"></a>
     <div class="row my-3">
-        <div class="col-1">  <!-- 추천영역 -->
+        <div class="col-1 rec">  <!-- 추천영역 -->
             <div class="bg-light text-center p-3 border font-weight-bolder mb-1">{{ answer.voter|length }}</div>
             <a href="#" data-uri="{{ url_for('vote.answer', answer_id=answer.id) }}"
                 class="recommend btn btn-sm btn-secondary btn-block my-1">추천</a>
